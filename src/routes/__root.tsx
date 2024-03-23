@@ -3,6 +3,9 @@ import React, { Suspense } from 'react'
 import { QueryClient } from '@tanstack/react-query'
 import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
 
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+
 const TanStackRouterDevtools =
   import.meta.env.NODE_ENV === 'production'
     ? () => null // Render nothing in production
@@ -30,14 +33,20 @@ const Route = createRootRouteWithContext<AppRouterContext>()({
   component: () => {
     return (
       <>
-        <div className="scroll-hidden">
-          <Outlet />
+        <div className="flex flex-col h-dvh">
+          <Header />
 
-          <Suspense fallback={null}>
-            <TanStackRouterDevtools />
-            <ReactQueryDevtools />
-          </Suspense>
+          <main className="flex-1">
+            <Outlet />
+          </main>
+
+          <Footer />
         </div>
+
+        <Suspense fallback={null}>
+          <TanStackRouterDevtools />
+          <ReactQueryDevtools />
+        </Suspense>
       </>
     )
   },

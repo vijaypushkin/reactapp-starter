@@ -2,7 +2,7 @@ export default {
   plugins: ['@trivago/prettier-plugin-sort-imports'],
   printWidth: 80,
   tabWidth: 2,
-  semi: false,
+  semi: true,
   singleQuote: true,
   jsxSingleQuote: false,
   trailingComma: 'all',
