@@ -57,9 +57,7 @@ This is a template repository for building modern React applications using a var
 
 1. **Clone the Repository:**
 
-   ```bash
-   git clone https://github.com/vijaypushkin/react-app-starter.git
-   ```
+  Click the "Use this template" button.
 
 2. **Install Dependencies:**
 
